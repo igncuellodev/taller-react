@@ -1,0 +1,16 @@
+{
+  "personas": [
+    { "id": 1, "nombre": "Nico" },
+    { "id": 2, "nombre": "Eli" },
+    { "id": 3, "nombre": "Bree" }
+  ],
+  "gastos": [
+    { "id": 1, "descripcion": "Supermercado", "monto": 45000, "pagoId": 1 },
+    { "id": 2, "descripcion": "Cuenta de luz", "monto": 32000, "pagoId": 2 },
+    { "id": 3, "descripcion": "Internet", "monto": 24990, "pagoId": 1 },
+    { "id": 4, "descripcion": "Feria", "monto": 18000, "pagoId": 2 },
+    { "id": 5, "descripcion": "Pañales", "monto": 21990, "pagoId": 3 },
+    { "id": 6, "descripcion": "Toallitas húmedas", "monto": 6500, "pagoId": 3 },
+    { "id": 7, "descripcion": "Leche de fórmula", "monto": 17990, "pagoId": 3 }
+  ]
+}
