@@ -1,17 +1,24 @@
 import { useState } from "react"
 import Payments from "./payments"
-import Order from "./order-filter"
-import PayFilter from "./pay-filter"
-import SearchBar from "./searchbar"
+import Order from "./dropdowns/order-filter"
+import PayFilter from "./dropdowns/pay-filter"
+import SearchBar from "./inputs/searchbar"
 
 export default function ListRender({ personas, gastos, total }) {
     const [search, setSearch] = useState('')
     const [personaSelect, setPersonaSelect] = useState("")
     const [orden, setOrden] = useState("")
+    const [totalNuevo, setTotalNuevo] = useState(total)
     let visibles = gastos.filter(gasto => gasto.descripcion.toLowerCase().includes(search.toLowerCase()))
 
     function seleccionar(persona) {
         setPersonaSelect(persona)
+        setTotalNuevo("Nose")
+
+        if (persona === "") {
+            setTotalNuevo(total)
+        }
+
     }
 
     function ordenarGastos(query) {
@@ -53,7 +60,7 @@ export default function ListRender({ personas, gastos, total }) {
             </div>
 
 
-            <Payments personas={personas} gastos={visibles} total={total} />
+            <Payments personas={personas} gastos={visibles} total={totalNuevo} />
         </div>
 
 
