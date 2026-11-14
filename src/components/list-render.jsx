@@ -4,7 +4,7 @@ import Order from "./dropdowns/order-filter"
 import PayFilter from "./dropdowns/pay-filter"
 import SearchBar from "./inputs/searchbar"
 
-export default function ListRender({ personas, gastos, total }) {
+export default function ListRender({ personas, gastos, total, id }) {
     const [search, setSearch] = useState('')
     const [personaSelect, setPersonaSelect] = useState("")
     const [orden, setOrden] = useState("")
@@ -60,7 +60,7 @@ export default function ListRender({ personas, gastos, total }) {
             </div>
 
 
-            <Payments personas={personas} gastos={visibles} total={totalNuevo} />
+            <Payments personas={personas} gastos={visibles} total={totalNuevo} id={id} />
         </div>
 
 

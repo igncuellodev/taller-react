@@ -1,5 +1,7 @@
+import DeleteBtn from "./botones/deletebtn";
 
-export default function Payments({ personas, gastos, total, personaFilter }) {
+
+export default function Payments({ personas, gastos, total, id }) {
   return (
     <div>
       <ul className="w-full flex flex-col gap-5">
@@ -9,14 +11,13 @@ export default function Payments({ personas, gastos, total, personaFilter }) {
               <p className="font-medium">{gasto.descripcion}</p>
               <p className="text-gray-400 text-sm">Pagó {personas.find((persona) => persona.id === gasto.pagoId).nombre}</p>
             </div>
-            <div>
+            <div className="flex gap-4 items-center">
               <p>${gasto.monto}</p>
+              <DeleteBtn eliminarGasto={() => id(gasto.id)} />
             </div>
           </li>
 
         ))}
-
-        {personaFilter && "Jabon"}
 
 
       </ul>
